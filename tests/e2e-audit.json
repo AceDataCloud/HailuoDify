@@ -1,0 +1,15 @@
+{
+  "tested_at": "2026-10-07T08:53:39.926090+00:00",
+  "environment": "Dify CE 1.17.1 / plugin daemon 0.6.10-local",
+  "transport": "official remote-debug; signature verification enabled",
+  "browser_test_run": true,
+  "unit_contract_tests": "27 passed, 1 warning in 0.50s",
+  "marketplace_toolkit_passed": true,
+  "package_sha256": "2ce774c5a8c8f5bd6fa5b39b35343e81a37e2c19e9567aaeeac4bd80db55cbdb",
+  "exact_package_serverless_install_passed": true,
+  "marketplace_install_tested": false,
+  "cloud_tested": false,
+  "cases": [],
+  "primary_blocked": true,
+  "scope_note": "Recorded cases only. Batch regressions reuse earlier paid successful tasks; those media generations are not billed or claimed as new. New paid calls have separate usage reconciliation. Optional untested models/actions are not claimed as passed; original failures and their corrections are preserved."
+}
