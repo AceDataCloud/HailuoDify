@@ -1,0 +1,99 @@
+identity:
+  name: hailuo_generate_video
+  author: acedatacloud
+  label:
+    en_US: Hailuo Generate Video
+    zh_Hans: Hailuo 生成视频
+description:
+  human:
+    en_US: Generate videos with Ace Data Cloud Hailuo Videos API.
+    zh_Hans: 通过 Ace Data Cloud Hailuo Videos API 生成视频。
+  llm: Generate a video from prompt / images via Ace Data Cloud Hailuo Videos API.
+    Generation returns a task ID. Query the same task until complete; never resubmit
+    a pending generation.
+parameters:
+- name: model
+  type: select
+  required: false
+  label:
+    en_US: Model
+    zh_Hans: 模型
+  human_description:
+    en_US: Select the current API model for this operation.
+    zh_Hans: 用于生成视频的模型，默认值为 `minimax-t2v`。
+  llm_description: Select the current API model for this operation.
+  form: form
+  default: minimax-t2v
+  options:
+  - value: minimax-i2v
+    label:
+      en_US: minimax-i2v
+      zh_Hans: minimax-i2v
+  - value: minimax-t2v
+    label:
+      en_US: minimax-t2v
+      zh_Hans: minimax-t2v
+  - value: minimax-i2v-director
+    label:
+      en_US: minimax-i2v-director
+      zh_Hans: minimax-i2v-director
+- name: action
+  type: select
+  required: false
+  label:
+    en_US: Action
+    zh_Hans: 行为
+  human_description:
+    en_US: Choose how to generate the video.
+    zh_Hans: 选择视频生成方式。
+  llm_description: Choose how to generate the video.
+  form: form
+  default: generate
+  options:
+  - value: generate
+    label:
+      en_US: generate
+      zh_Hans: generate
+- name: prompt
+  type: string
+  required: false
+  label:
+    en_US: Prompt
+    zh_Hans: 提示词
+  human_description:
+    en_US: Required prompt for video generation.
+    zh_Hans: 生成视频的提示词（必填）。
+  llm_description: Required prompt for video generation.
+  form: llm
+- name: first_image_url
+  type: string
+  required: false
+  label:
+    en_US: First Image URL
+    zh_Hans: 首帧图片链接
+  human_description:
+    en_US: Required for minimax-i2v.
+    zh_Hans: minimax-i2v 必填。
+  llm_description: Required for minimax-i2v.
+  form: form
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/hailuo_generate.py
