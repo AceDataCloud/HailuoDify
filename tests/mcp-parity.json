@@ -1,0 +1,68 @@
+{
+  "mcp_revision": "f0eed10abf310824cb4c33d4944c63d3654ac95b",
+  "mapping": [
+    {
+      "mcp_tool": "hailuo_list_models",
+      "dify_tools": [],
+      "parameters": {},
+      "unresolved": [],
+      "note": "Model/action selectors and the API reference; informational guidance does not submit a request."
+    },
+    {
+      "mcp_tool": "hailuo_list_actions",
+      "dify_tools": [],
+      "parameters": {},
+      "unresolved": [],
+      "note": "Model/action selectors and the API reference; informational guidance does not submit a request."
+    },
+    {
+      "mcp_tool": "hailuo_get_task",
+      "dify_tools": [
+        "hailuo_task_retrieve"
+      ],
+      "parameters": {
+        "task_id": "task_id"
+      },
+      "unresolved": [],
+      "note": "Set action=retrieve"
+    },
+    {
+      "mcp_tool": "hailuo_get_tasks_batch",
+      "dify_tools": [
+        "hailuo_tasks_retrieve_batch"
+      ],
+      "parameters": {
+        "task_ids": "ids"
+      },
+      "unresolved": [],
+      "note": "Set action=retrieve_batch"
+    },
+    {
+      "mcp_tool": "hailuo_generate_video",
+      "dify_tools": [
+        "hailuo_generate_video"
+      ],
+      "parameters": {
+        "prompt": "prompt",
+        "model": "model",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=generate"
+    },
+    {
+      "mcp_tool": "hailuo_generate_video_from_image",
+      "dify_tools": [
+        "hailuo_generate_video"
+      ],
+      "parameters": {
+        "prompt": "prompt",
+        "first_image_url": "first_image_url",
+        "model": "model",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=generate"
+    }
+  ]
+}

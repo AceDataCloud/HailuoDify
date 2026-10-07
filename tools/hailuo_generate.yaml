@@ -8,21 +8,23 @@ description:
   human:
     en_US: Generate videos with Ace Data Cloud Hailuo Videos API.
     zh_Hans: 通过 Ace Data Cloud Hailuo Videos API 生成视频。
-  llm: Generate a video from prompt / images via Ace Data Cloud Hailuo Videos API.
-    Generation returns a task ID. Query the same task until complete; never resubmit
-    a pending generation.
+  llm: Generate videos with Ace Data Cloud Hailuo Videos API. For asynchronous results,
+    preserve task_id and use the task retrieval tool until completion. A successful
+    submission is not completed output.
 parameters:
 - name: model
   type: select
   required: false
+  form: form
   label:
     en_US: Model
     zh_Hans: 模型
   human_description:
-    en_US: Select the current API model for this operation.
+    en_US: Select a model currently supported by this API. Availability and pricing
+      depend on the chosen model.
     zh_Hans: 用于生成视频的模型，默认值为 `minimax-t2v`。
-  llm_description: Select the current API model for this operation.
-  form: form
+  llm_description: Select a model currently supported by this API. Availability and
+    pricing depend on the chosen model.
   default: minimax-t2v
   options:
   - value: minimax-i2v
@@ -40,14 +42,14 @@ parameters:
 - name: action
   type: select
   required: false
+  form: form
   label:
     en_US: Action
     zh_Hans: 行为
   human_description:
     en_US: Choose how to generate the video.
-    zh_Hans: 选择视频生成方式。
+    zh_Hans: 视频生成的操作类型。设为 `generate` 时，将根据提示词生成视频。
   llm_description: Choose how to generate the video.
-  form: form
   default: generate
   options:
   - value: generate
@@ -57,25 +59,36 @@ parameters:
 - name: prompt
   type: string
   required: false
+  form: llm
   label:
     en_US: Prompt
     zh_Hans: 提示词
   human_description:
     en_US: Required prompt for video generation.
-    zh_Hans: 生成视频的提示词（必填）。
+    zh_Hans: 用于生成视频的提示词。
   llm_description: Required prompt for video generation.
-  form: llm
+- name: callback_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Callback Url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Set callback url for this operation.
+    zh_Hans: 视频生成完成后将被调用的回调 URL。
+  llm_description: Set callback url for this operation.
 - name: first_image_url
   type: string
   required: false
+  form: form
   label:
     en_US: First Image URL
     zh_Hans: 首帧图片链接
   human_description:
     en_US: Required for minimax-i2v.
-    zh_Hans: minimax-i2v 必填。
+    zh_Hans: 可指定首帧图片 URL，用于以图生视频。
   llm_description: Required for minimax-i2v.
-  form: form
 output_schema:
   type: object
   properties:
