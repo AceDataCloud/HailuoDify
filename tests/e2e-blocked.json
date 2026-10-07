@@ -1,0 +1,42 @@
+{
+  "status": "blocked_by_current_api",
+  "browser_tested": true,
+  "environment": "Dify CE 1.17.1 / plugin daemon 0.6.10-local, official remote debug, signature verification true",
+  "reason": "The current video-generation service returned server errors for text-to-video and image-to-video. No successful media was returned.",
+  "cases": [
+    {
+      "case": "Hailuo Dify Task Recovery",
+      "workflow_status": "failed",
+      "task_status": null,
+      "submitted_task_id": null,
+      "error": "An error occurred in the acedatacloud/hailuo/hailuo, please contact the author of acedatacloud/hailuo/hailuo for help, error type: AceDataHailuoError, error details: Task failed. Check its details in the Ace Data Cloud console.",
+      "run_id": "031a4522-be7c-44ae-82b6-62be2d164e1d"
+    },
+    {
+      "case": "Hailuo Dify E2E Retry",
+      "workflow_status": "unknown",
+      "task_status": null,
+      "submitted_task_id": "cc7afbfa-613c-4dc3-8e39-f32362bbc9e2",
+      "error": null,
+      "run_id": null
+    },
+    {
+      "case": "Hailuo Dify E2E",
+      "workflow_status": "failed",
+      "task_status": null,
+      "submitted_task_id": "e1558358-d50d-4e60-bc85-e9930c04b854",
+      "error": "An error occurred in the acedatacloud/hailuo/hailuo, please contact the author of acedatacloud/hailuo/hailuo for help, error type: AceDataHailuoError, error details: Connection failed. Check request history for an accepted task before resubmitting.",
+      "run_id": "07a48ea6-9811-42f1-83df-5aff864f9258"
+    },
+    {
+      "case": "Hailuo Image Dify E2E",
+      "workflow_status": "failed",
+      "task_status": null,
+      "submitted_task_id": "30cb1a00-f579-4f73-8d24-7a5d6194bf0b",
+      "error": "An error occurred in the acedatacloud/hailuo/hailuo, please contact the author of acedatacloud/hailuo/hailuo for help, error type: AceDataHailuoError, error details: Task failed. Check its details in the Ace Data Cloud console.",
+      "run_id": "305eb345-68df-4cfb-b54c-d4572ae7b35b"
+    }
+  ],
+  "marketplace_submitted": false,
+  "next_action": "Retest after service availability or API behavior changes; never mark accepted/pending jobs complete."
+}
