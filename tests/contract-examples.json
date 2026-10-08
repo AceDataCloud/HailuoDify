@@ -1,0 +1,44 @@
+[
+  {
+    "name": "hailuo_generate_video-1",
+    "tool": "hailuo_generate_video",
+    "inputs": {
+      "prompt": "Test"
+    },
+    "method": "POST",
+    "path": "/hailuo/videos",
+    "body": {
+      "async": true
+    }
+  },
+  {
+    "name": "hailuo_generate_video-2",
+    "tool": "hailuo_generate_video",
+    "inputs": {
+      "model": "minimax-i2v",
+      "first_image_url": "https://example.org/reference.png",
+      "prompt": "Test"
+    },
+    "method": "POST",
+    "path": "/hailuo/videos",
+    "body": {
+      "first_image_url": "https://example.org/reference.png"
+    }
+  },
+  {
+    "name": "hailuo_tasks_retrieve_batch-3",
+    "tool": "hailuo_tasks_retrieve_batch",
+    "inputs": {
+      "ids": "[\"owned-task\"]"
+    },
+    "method": "POST",
+    "path": "/hailuo/tasks",
+    "body": {
+      "action": "retrieve_batch",
+      "ids": [
+        "owned-task"
+      ]
+    },
+    "read_only": true
+  }
+]
