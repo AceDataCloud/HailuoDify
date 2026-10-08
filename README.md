@@ -1,5 +1,7 @@
 # Hailuo for Dify
 
+> **Release status — October 8, 2026:** Not published to Dify Marketplace. Primary real-Dify generation remains blocked by service availability. The video-generation service rejects the currently supported models as unavailable. Source tests passing do not establish live generation success. See [availability evidence](tests/e2e-blocked.json).
+
 Use the Ace Data Cloud Hailuo APIs in Dify workflows. Maintained by Ace Data Cloud. The plugin is free; API calls require your own authorized account and use the current service pricing.
 
 ## Setup

@@ -38,5 +38,18 @@
     }
   ],
   "marketplace_submitted": false,
-  "next_action": "Retest after service availability or API behavior changes; never mark accepted/pending jobs complete."
+  "next_action": "Retest after service availability or API behavior changes; never mark accepted/pending jobs complete.",
+  "availability_review": {
+    "checked_at": "2026-10-08T03:57:32.613857+00:00",
+    "method": "read-only correlated request logs, public API catalog, current worker source and deployment readiness",
+    "finding": "The video-generation service rejects the currently supported models as unavailable.",
+    "boundary": "Generation service returned HTTP 503; the public asynchronous task ended in failure.",
+    "trace_id": "0ffa22cc-8d7a-48a6-802e-fc2a60f2a8db",
+    "task_id": "cc7afbfa-613c-4dc3-8e39-f32362bbc9e2",
+    "recorded_call_deducted_credits": 0,
+    "plugin_defect_confirmed": false,
+    "current_runtime_recovery_proven": false,
+    "new_paid_request_submitted": false,
+    "resume_when": "A service recovery or relevant deployment change is evidenced; then one minimal real Dify primary case must reach terminal success, return decodable media and reconcile usage before source merge and official submission."
+  }
 }
