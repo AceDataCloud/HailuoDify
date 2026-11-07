@@ -1,0 +1,46 @@
+{
+  "backend_revision": "fa94598267a82545fb1afed6ee26bafd6cbb9ca7",
+  "mcp_revision": "f0eed10abf310824cb4c33d4944c63d3654ac95b",
+  "tools": [
+    {
+      "tool": "hailuo_generate_video",
+      "method": "POST",
+      "path": "/hailuo/videos",
+      "parameters": [
+        "model",
+        "action",
+        "prompt",
+        "callback_url",
+        "first_image_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/d5af91f6-a7ec-4015-b0a5-d25051158470.json"
+    },
+    {
+      "tool": "hailuo_task_retrieve",
+      "method": "POST",
+      "path": "/hailuo/tasks",
+      "parameters": [
+        "task_id",
+        "wait_seconds"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/51dca1fb-cc12-4a4a-b31a-01b62043abcd.json"
+    },
+    {
+      "tool": "hailuo_tasks_retrieve_batch",
+      "method": "POST",
+      "path": "/hailuo/tasks",
+      "parameters": [
+        "ids"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/51dca1fb-cc12-4a4a-b31a-01b62043abcd.json"
+    }
+  ],
+  "mcp_scope": "hailuo",
+  "notes": [
+    "Informational MCP model/action lists are represented by tool dropdowns and README capability tables.",
+    "GPT Image covers image-generation/editing/task capabilities of the broader OpenAI MCP; chat is supplied by ModelProviderDify."
+  ]
+}

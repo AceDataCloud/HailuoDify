@@ -1,0 +1,60 @@
+identity:
+  name: hailuo_task_retrieve
+  author: acedatacloud
+  label:
+    en_US: Hailuo Retrieve Task
+    zh_Hans: Hailuo 查询任务
+description:
+  human:
+    en_US: Retrieve one task, optionally waiting up to 240 seconds.
+    zh_Hans: 查询单个任务，可等待最多 240 秒。
+  llm: Query the existing task ID; do not repeat generation while it is pending.
+parameters:
+- name: task_id
+  type: string
+  required: true
+  form: form
+  label:
+    en_US: Task ID
+    zh_Hans: 任务 ID
+  human_description:
+    en_US: Use the task ID or IDs returned by earlier submissions.
+    zh_Hans: 使用之前提交返回的任务 ID。
+  llm_description: Use the task ID or IDs returned by earlier submissions.
+- name: wait_seconds
+  type: number
+  required: false
+  form: form
+  label:
+    en_US: Wait up to seconds
+    zh_Hans: 最长等待秒数
+  human_description:
+    en_US: 0 queries once; 1–240 waits for the same task to finish. Pending is not
+      complete.
+    zh_Hans: 0 表示查询一次；1–240 表示等待同一任务完成。pending 不表示已完成。
+  llm_description: 0 queries once; 1–240 waits for the same task to finish. Pending
+    is not complete.
+  default: 0
+  min: 0
+  max: 240
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/hailuo_task_retrieve.py

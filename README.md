@@ -1,3 +1,70 @@
-# Hailuo Dify plugin
+# Hailuo by Ace Data Cloud for Dify
 
-Source implementation is being prepared for review.
+> **Candidate source — November 8, 2026:** Not published to Dify Marketplace. Merging reviewed source into `main` does not release a usable generation service. Current real Dify primary-generation success, decodable media and reconciled usage remain unverified; the October8 service failures are preserved in [historical evidence](tests/e2e-blocked.json). The November8 tests use mocked transport and do not prove live recovery. No stable tag, formal package or Marketplace submission is authorized by this source merge.
+
+Use the Ace Data Cloud Hailuo APIs in Dify workflows. Maintained by Ace Data Cloud. The plugin is free; API calls require your own authorized account and use the current service pricing.
+
+## Setup
+
+1. Activate the service at [Ace Data Cloud](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_readme_api_key), check [current pricing](https://platform.acedata.cloud/models), and create an API token with the required service access.
+2. Install from the official Dify Marketplace once the submission is approved and published. During review, use Dify's documented package/debug installation in a test workspace. A GitHub PR does not establish Marketplace availability or default installation.
+3. In Dify's **Plugins / Tools** page, authorize this provider with **Bearer Token** (`acedata_bearer_token`). Do not include credentials in prompts or exported workflows. Credential validation never generates media. Authorization performs a read-only task query.
+
+### Create a separate Dify-purpose Token
+
+Open [Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_readme_api_key), register/sign in if needed, and select the application with **Hailuo** service access. Initialize the General application only if your account has none. In **Manage Keys → Create**, give the key a recognizable Dify name and set appropriate expiration, usage and API restrictions. Copy the resulting consumer Token; do not use a platform management token. For validation/retrieval, permit `/hailuo/tasks`; generating media needs the explicitly selected service APIs and may be charged.
+
+![Applications copy and key-management guide, October9 2026 UTC+8](_assets/tutorial/get-api-key-en.png)
+
+![Applications Create dialog guide, October9 2026 UTC+8](_assets/tutorial/create-api-key-en.png)
+
+These are reused real Applications screenshots, with account/token data masked, not Hailuo plugin screenshots. The depicted Create dialog was cancelled; this review did not create a dedicated Token, run a new generation or prove the candidate's live recovery. [Screenshot provenance](_assets/tutorial/key-screenshots-provenance.json) preserves the UTC capture date. Paste only the Token into the native secret credential field, without `Bearer `, and keep it out of prompts and exported workflows. A green credential check proves access only, not generation availability.
+
+## Tools
+
+| Tool | API |
+|---|---|
+| `hailuo_generate_video` | `POST /hailuo/videos` |
+| `hailuo_task_retrieve` | `POST /hailuo/tasks` |
+| `hailuo_tasks_retrieve_batch` | `POST /hailuo/tasks` |
+
+See [CAPABILITIES.md](CAPABILITIES.md) for the current MCP comparison and parameter equivalents. All exposed inputs follow the current published API; model combinations and availability still depend on the service.
+
+## Run a workflow
+
+For generation, use **Start → generation tool → task retrieval → Output**. Fill the prompt/text and model, and enter arrays/objects as JSON. Optional values can be left empty. The example requests in [tests/contract-examples.json](https://github.com/AceDataCloud/HailuoDify/blob/main/tests/contract-examples.json) show valid shapes; example.org URLs are placeholders that must be replaced with your own accessible media.
+
+A submission can return `status=pending` with `task_id`. Save that ID, then use the retrieval tool with `wait_seconds=0` to read once, or 1–240 for a bounded wait. If still pending, query the same task again. Disable automatic retries on generation nodes. No paid request is automatically retried and no substitute model is selected.
+
+`status`, `success`, `task_id`, `trace_id`, `media_urls`, `data`, and `result` are available as Dify variables. Only a terminal successful result has `success=true`; intermediate previews remain pending. Batch queries preserve the state of each item. Terminal task failures raise a tool error. Synchronous search, text and management results are returned directly in `data`/`result`. The plugin does not execute model-generated tools.
+
+The table maps service operations to Dify tools. Different MCP helper functions may use the same action selector or structured JSON input.
+
+Task/query calls retry transport failures at most twice. Generation has one attempt and a 10-second connect / 60-second read timeout. After a timeout, inspect [request history](https://platform.acedata.cloud/console/usages) before resubmitting; the accepted task may still be running. Delete/archive operations require `confirm=true`.
+
+## Branding and privacy
+
+The plugin uses the exact existing system asset recorded in [branding provenance](https://github.com/AceDataCloud/HailuoDify/blob/main/tests/branding-source.json), for both light and dark icons. No logo was generated or redrawn. Asset SHA256: `4171d571fbf7ff44e65e1b51829e9a9a101a49fff4b65994344226eb615a96b9`.
+
+Requests go directly to `https://api.acedata.cloud`. The plugin passes reference URLs to that API and returns media links; it does not fetch arbitrary reference URLs. Dify may fetch/render output links under its own policies. Never submit media you lack permission to process. See [PRIVACY.md](PRIVACY.md).
+
+API charges are recorded in Credits in your Ace Data Cloud account. Check the actual usage ledger; Dify execution counts are not a billing ledger. USD = Credits × your current package price / amount.
+
+## Development and evidence
+
+Python 3.12 is required. Install `requirements.txt`, then run:
+
+```sh
+python -m pytest tests -q
+ruff check .
+ruff format --check .
+dify plugin package .
+```
+
+The dated October8 failures above remain historical observations; publication of a schema/model does not prove service recovery. Source contracts, MCP mappings, brand provenance and offline cases are in `tests/`. Recorded real Dify results state their exact coverage; they do not establish all models/options or Dify Cloud/Marketplace installation. See [tests/README.md](https://github.com/AceDataCloud/HailuoDify/blob/main/tests/README.md).
+
+- Source: https://github.com/AceDataCloud/HailuoDify
+- Issues: https://github.com/AceDataCloud/HailuoDify/issues
+- Contact: dev@acedata.cloud
+- License: MIT
+- [Simplified Chinese](readme/README_zh_Hans.md)

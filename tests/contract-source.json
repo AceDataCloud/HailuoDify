@@ -1,0 +1,17 @@
+{
+  "backend_revision": "7b4bbf0e4f6b83c273baed1d5b8e9bea0f3ece1c",
+  "apis": [
+    {
+      "path": "/hailuo/videos",
+      "spec": "openapi/d5af91f6-a7ec-4015-b0a5-d25051158470.json"
+    }
+  ],
+  "icon_source": {
+    "repository": "AceDataCloud/Dify",
+    "revision": "eaf0e68cd34cfe4cadece7a9ee34a98aac6b961e^",
+    "path": "plugins/hailuo/_assets/icon.jpg"
+  },
+  "icon_sha256": {
+    "icon.jpg": "9a7cb0b86f3baf4522414812632540115c5bcecd6b632b7dc00f84d6dd6a5694"
+  }
+}
