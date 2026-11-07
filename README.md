@@ -1,14 +1,24 @@
-# Hailuo for Dify
+# Hailuo by Ace Data Cloud for Dify
 
-> **Release status — October 8, 2026:** Not published to Dify Marketplace. Primary real-Dify generation remains blocked by service availability. The video-generation service rejects the currently supported models as unavailable. Source tests passing do not establish live generation success. See [availability evidence](tests/e2e-blocked.json).
+> **Release status — October 8, 2026:** Not published to Dify Marketplace. Primary real-Dify generation has not passed the delivery gate; the following is dated October8 service evidence, not a November8 live generation probe. The video-generation service rejects the currently supported models as unavailable. Source tests passing do not establish live generation success. See [availability evidence](tests/e2e-blocked.json). The November8 follow-up uses offline contracts only and does not establish recovery.
 
 Use the Ace Data Cloud Hailuo APIs in Dify workflows. Maintained by Ace Data Cloud. The plugin is free; API calls require your own authorized account and use the current service pricing.
 
 ## Setup
 
-1. Activate the service at [Ace Data Cloud](https://platform.acedata.cloud/console/applications), check [current pricing](https://platform.acedata.cloud/models), and create an API token with the required service access.
+1. Activate the service at [Ace Data Cloud](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_readme_api_key), check [current pricing](https://platform.acedata.cloud/models), and create an API token with the required service access.
 2. Install from the official Dify Marketplace once the submission is approved and published. During review, use Dify's documented package/debug installation in a test workspace. A GitHub PR does not establish Marketplace availability or default installation.
 3. In Dify's **Plugins / Tools** page, authorize this provider with **Bearer Token** (`acedata_bearer_token`). Do not include credentials in prompts or exported workflows. Credential validation never generates media. Authorization performs a read-only task query.
+
+### Create a separate Dify-purpose Token
+
+Open [Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_readme_api_key), register/sign in if needed, and select the application with **Hailuo** service access. Initialize the General application only if your account has none. In **Manage Keys → Create**, give the key a recognizable Dify name and set appropriate expiration, usage and API restrictions. Copy the resulting consumer Token; do not use a platform management token. For validation/retrieval, permit `/hailuo/tasks`; generating media needs the explicitly selected service APIs and may be charged.
+
+![Applications copy and key-management guide, October9 2026 UTC+8](_assets/tutorial/get-api-key-en.png)
+
+![Applications Create dialog guide, October9 2026 UTC+8](_assets/tutorial/create-api-key-en.png)
+
+These are reused real Applications screenshots, with account/token data masked, not Hailuo plugin screenshots. The depicted Create dialog was cancelled; this review did not create a dedicated Token, run a new generation or prove the candidate's live recovery. [Screenshot provenance](_assets/tutorial/key-screenshots-provenance.json) preserves the UTC capture date. Paste only the Token into the native secret credential field, without `Bearer `, and keep it out of prompts and exported workflows. A green credential check proves access only, not generation availability.
 
 ## Tools
 
@@ -51,7 +61,7 @@ ruff format --check .
 dify plugin package .
 ```
 
-Source contracts, MCP mappings, brand provenance and offline cases are in `tests/`. Recorded real Dify results state their exact coverage; they do not establish all models/options or Dify Cloud/Marketplace installation. See [tests/README.md](https://github.com/AceDataCloud/HailuoDify/blob/main/tests/README.md).
+The dated October8 failures above remain historical observations; publication of a schema/model does not prove service recovery. Source contracts, MCP mappings, brand provenance and offline cases are in `tests/`. Recorded real Dify results state their exact coverage; they do not establish all models/options or Dify Cloud/Marketplace installation. See [tests/README.md](https://github.com/AceDataCloud/HailuoDify/blob/main/tests/README.md).
 
 - Source: https://github.com/AceDataCloud/HailuoDify
 - Issues: https://github.com/AceDataCloud/HailuoDify/issues

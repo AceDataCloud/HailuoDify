@@ -2,10 +2,10 @@ identity:
   author: acedatacloud
   name: hailuo
   label:
-    en_US: Hailuo
-    zh_Hans: Hailuo
-    ja_JP: Hailuo
-    pt_BR: Hailuo
+    en_US: Hailuo by Ace Data Cloud
+    zh_Hans: Hailuo by Ace Data Cloud
+    ja_JP: Hailuo by Ace Data Cloud
+    pt_BR: Hailuo by Ace Data Cloud
   description:
     en_US: Use the Ace Data Cloud Hailuo APIs in Dify workflows.
     zh_Hans: 在 Dify 工作流中使用 Ace Data Cloud Hailuo API。
@@ -24,9 +24,9 @@ credentials_for_provider:
       en_US: Paste your token (without "Bearer ")
       zh_Hans: 粘贴 Token（不需要带 Bearer）
     help:
-      en_US: Acquire a token with access to this service from the Ace Data Cloud console.
-      zh_Hans: 从 Ace Data Cloud 控制台获取具有此服务权限的 Token。
-    url: https://platform.acedata.cloud/console/credentials
+      en_US: Open Applications, choose your service application, and use Manage Keys to create a dedicated Dify-purpose Token. Paste only the consumer Token, without Bearer.
+      zh_Hans: 打开Applications中的对应服务应用，经管理密钥创建独立Dify用途Token；只粘贴consumer Token，不加Bearer。
+    url: https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_provider_token
 tools:
 - tools/hailuo_generate.yaml
 - tools/hailuo_task_retrieve.yaml

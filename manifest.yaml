@@ -3,10 +3,10 @@ type: plugin
 author: acedatacloud
 name: hailuo
 label:
-  en_US: Hailuo
-  zh_Hans: Hailuo
-  ja_JP: Hailuo
-  pt_BR: Hailuo
+  en_US: Hailuo by Ace Data Cloud
+  zh_Hans: Hailuo by Ace Data Cloud
+  ja_JP: Hailuo by Ace Data Cloud
+  pt_BR: Hailuo by Ace Data Cloud
 description:
   en_US: Use the Ace Data Cloud Hailuo APIs in Dify workflows.
   zh_Hans: 在 Dify 工作流中使用 Ace Data Cloud Hailuo API。

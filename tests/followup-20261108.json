@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-08T01:34:33.735053+08:00",
+  "public_contract_url": "d5af91f6-a7ec-4015-b0a5-d25051158470",
+  "public_contract_source": "https://platform.acedata.cloud/api/v1/apis/d5af91f6-a7ec-4015-b0a5-d25051158470",
+  "backend_source_head": "5785c32bd91e0ad287842fba5e2c66dca5327bff",
+  "no_new_paid_generation": true,
+  "no_new_token": true,
+  "historical_successful_primary_case_available": false,
+  "old_failed_cases_preserved": "tests/e2e-blocked.json unchanged",
+  "release_gate": "Keep sourcePR1 OPEN and withhold Marketplace submission until current primary realDify terminal success, decodable media and reconciled usage evidence; mock/schema/credentials do not replace it.",
+  "source_runtime_fix": false,
+  "changes": "Brand labels and native credential CTA moved from console/credentials to Applications with4UTM; bilingual sourced historic key guide",
+  "Producer_is_separate_music_service": false,
+  "SDK_and_mock_scope": "offline request/response tests only; no new host/browser",
+  "public_contract_evidence": "Current unauthenticated PlatformBackend API record includes request definition, service alias and free task-query contract; publication is not runtime recovery proof.",
+  "offline_suite": {
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q",
+    "passed": 27,
+    "warning": "one upstream SDK Pydantic config deprecation",
+    "Ruff_lint_format": "passed"
+  },
+  "public_current_model_contract": [
+    "minimax-i2v",
+    "minimax-t2v",
+    "minimax-i2v-director"
+  ],
+  "primary_recovery": "not evidenced; no successful historical primary case in candidate e2e-audit/progress files to re-query",
+  "paid_or_sameID_calls_submitted": 0,
+  "source_tests_are_not_real_task_evidence": true,
+  "Market_listing": "Current exact alias returned404plugin not found; no official submission initiated.",
+  "workflow": "only existing offline tests/Ruff; no automatic packaging or publication",
+  "screenshot_source": "_assets/tutorial/key-screenshots-provenance.json; Applications2026-10-09CST, not candidate native UI or generation result"
+}
