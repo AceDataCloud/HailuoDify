@@ -1,6 +1,6 @@
 # Hailuo by Ace Data Cloud for Dify
 
-> **Release status — October 8, 2026:** Not published to Dify Marketplace. Primary real-Dify generation has not passed the delivery gate; the following is dated October8 service evidence, not a November8 live generation probe. The video-generation service rejects the currently supported models as unavailable. Source tests passing do not establish live generation success. See [availability evidence](tests/e2e-blocked.json). The November8 follow-up uses offline contracts only and does not establish recovery.
+> **Candidate source — November 8, 2026:** Not published to Dify Marketplace. Merging reviewed source into `main` does not release a usable generation service. Current real Dify primary-generation success, decodable media and reconciled usage remain unverified; the October8 service failures are preserved in [historical evidence](tests/e2e-blocked.json). The November8 tests use mocked transport and do not prove live recovery. No stable tag, formal package or Marketplace submission is authorized by this source merge.
 
 Use the Ace Data Cloud Hailuo APIs in Dify workflows. Maintained by Ace Data Cloud. The plugin is free; API calls require your own authorized account and use the current service pricing.
 
