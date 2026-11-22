@@ -26,7 +26,7 @@ credentials_for_provider:
     help:
       en_US: Open Applications, choose your service application, and use Manage Keys to create a dedicated Dify-purpose Token. Paste only the consumer Token, without Bearer.
       zh_Hans: 打开Applications中的对应服务应用，经管理密钥创建独立Dify用途Token；只粘贴consumer Token，不加Bearer。
-    url: https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_provider_token
+    url: https://platform.acedata.cloud/console/applications?utm_source=dify&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_provider_token
 tools:
 - tools/hailuo_generate.yaml
 - tools/hailuo_task_retrieve.yaml
