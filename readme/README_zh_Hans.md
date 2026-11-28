@@ -10,9 +10,9 @@
 2. 官方审核并上架后，可从 Dify Marketplace 安装。审核期间可以在测试环境使用 Dify 官方的包安装或远程调试流程。PR 已提交不表示市场已发布，也不表示默认预装。
 3. 在 Dify 的插件或工具页填写 Bearer Token（`acedata_bearer_token`）。凭据检查不会生成内容。授权使用只读任务查询。
 
-## 为Dify创建独立用途Token
+## 为 Dify 复制应用 API Key
 
-打开 [Applications](https://platform.acedata.cloud/console/applications?utm_source=dify&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_readme_api_key)，按需注册登录并选择有 **Hailuo** 服务权限的应用；只有尚无通用应用时才初始化。经 **管理密钥 → 创建** 给Token取易识别的Dify名称，设置合适的过期、用量和API限制，创建后复制consumer Token。不要使用平台管理Token。授权验证/查询需允许 `/hailuo/tasks`；生成媒体另需相应服务API权限并可能计费。
+打开 [Applications](https://platform.acedata.cloud/console/applications?utm_source=dify&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_readme_api_key)，登录后打开**通用应用**，点击 **API KEY** 右侧的复制按钮。确认密钥有权访问 **Hailuo**。如需为 Dify 单独设置用量或接口限制，可在**管理密钥**中设置。授权验证/查询需允许 `/hailuo/tasks`；生成媒体另需相应服务API权限并可能计费。
 
 ![Applications复制/管理密钥真实旧图，北京时间2026年10月9日](../_assets/tutorial/get-api-key-en.png)
 

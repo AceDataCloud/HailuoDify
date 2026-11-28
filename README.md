@@ -10,9 +10,9 @@ Use the Ace Data Cloud Hailuo APIs in Dify workflows. Maintained by Ace Data Clo
 2. Install from the official Dify Marketplace once the submission is approved and published. During review, use Dify's documented package/debug installation in a test workspace. A GitHub PR does not establish Marketplace availability or default installation.
 3. In Dify's **Plugins / Tools** page, authorize this provider with **Bearer Token** (`acedata_bearer_token`). Do not include credentials in prompts or exported workflows. Credential validation never generates media. Authorization performs a read-only task query.
 
-### Create a separate Dify-purpose Token
+### Copy your application API key for Dify
 
-Open [Applications](https://platform.acedata.cloud/console/applications?utm_source=dify&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_readme_api_key), register/sign in if needed, and select the application with **Hailuo** service access. Initialize the General application only if your account has none. In **Manage Keys → Create**, give the key a recognizable Dify name and set appropriate expiration, usage and API restrictions. Copy the resulting consumer Token; do not use a platform management token. For validation/retrieval, permit `/hailuo/tasks`; generating media needs the explicitly selected service APIs and may be charged.
+Open [Applications](https://platform.acedata.cloud/console/applications?utm_source=dify&utm_medium=referral&utm_campaign=evergreen&utm_content=hailuodify_readme_api_key), register/sign in if needed, and open **General Application**. Copy the application key beside **API KEY** and check its access to **Hailuo**. To set separate limits for Dify, use **Manage Keys**. Use an application key for these tools. For validation/retrieval, permit `/hailuo/tasks`; generating media needs the explicitly selected service APIs and may be charged.
 
 ![Applications copy and key-management guide, October9 2026 UTC+8](_assets/tutorial/get-api-key-en.png)
 
