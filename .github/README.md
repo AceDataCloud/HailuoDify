@@ -1,6 +1,6 @@
 <!-- Generated from README.md by AceDataCloud/Index plans/plugin-readme-audit/render_channel_readmes.py. -->
 
-# Hailuo by Ace Data Cloud for Dify
+# Hailuo for Dify
 
 > **Candidate source — November 8, 2026:** Not published to Dify Marketplace. Merging reviewed source into `main` does not release a usable generation service. Current real Dify primary-generation success, decodable media and reconciled usage remain unverified; the October8 service failures are preserved in [historical evidence](../tests/e2e-blocked.json). The November8 tests use mocked transport and do not prove live recovery. No stable tag, formal package or Marketplace submission is authorized by this source merge.
 

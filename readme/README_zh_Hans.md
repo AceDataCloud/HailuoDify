@@ -1,4 +1,4 @@
-# Hailuo by Ace Data Cloud Dify 插件
+# Hailuo Dify 插件
 
 > **候选源码（2026-11-08）：** 尚未发布到Dify Marketplace。经审查合入`main`仅表示候选源码完成，不表示生成服务已可用或正式发布。当前真实Dify主生成成功、媒体解码和用量核对仍未验证；10月8日服务失败保留在[历史证据](../tests/e2e-blocked.json)。11月8日测试使用mock传输，不证明服务恢复。源码合并不放行稳定tag、正式包或市场投稿。
 
